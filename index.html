@@ -181,6 +181,7 @@
       renderResultConsumerOffer();
       if(audience!=='male'||format!=='survey')return;
       const reasonHeading=$('.editor-note b');if(reasonHeading){reasonHeading.textContent='免疫分析研究センターが選ばれる理由';reasonHeading.classList.add('keep-white')}
+      const reasonList=$('.editor-note p');if(reasonList){reasonList.innerHTML=reasonList.innerHTML.replace('③1日1球に250mg','③1日1球*に250mg')+'<br><small class="dosage-note" data-gothic-scaled="true">※目安量</small>'}
       const resultIntro=$('.article-top .intro');if(resultIntro)resultIntro.remove();
       const resultParagraphs=$$('.article-copy p');
       if(resultParagraphs[1])resultParagraphs[1].innerHTML='<strong>成分の数を追求するのではなく、1日の飲む量と、生産者に確かな研究実績がNMN選びには重要</strong>ということです。';
