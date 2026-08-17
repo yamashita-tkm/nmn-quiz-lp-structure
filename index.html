@@ -69,9 +69,9 @@
     function answerNote(){if(format==='quiz')return step===0?'なるほど。では、数字以外の選び方も見てみましょう。':'ありがとうございます。次のポイントも確認してみましょう。';const notes=audience==='male'?['その視点に、免疫センターの研究・検査機関としての背景が応えます。','だから免疫センターは、配合量だけでなく原料規格まで確認しています。','続けやすさまで設計するのが、免疫センターの考える年齢対策です。','毎日口にするものとして、製造・品質管理まで確かめています。']:['その気持ちに、免疫センターの研究・検査機関としての背景が応えます。','美容成分を選ぶように、NMNも原料の中身まで確かめたいところです。','いつもの習慣に無理なく足せる形まで、免疫センターは考えました。','毎日取り入れるものだから、製造・品質管理まで納得できることが大切です。'];return notes[Math.min(step,notes.length-1)]}
     const researchTips=[
       ['売ることより先に、データを見る機関。','免疫分析研究センターは、免疫・細胞年齢などの解析や臨床試験に向き合ってきた研究・検査機関。商品を華やかに見せる前に、<strong>確認できるデータを大切にする姿勢</strong>が土台です。'],
-      ['純度99.9％。原料の「中身」まで確認。','成果LPでは、発酵を用いた原料を採用し、<strong>純度99.9％のNMN</strong>を使用すると説明されています。数字の大きさだけでなく、原料規格まで確認できることが選択材料になります。'],
+      ['純度99.9％。原料の「中身」まで確認。','免疫分析研究センターのNMNは、発酵法でつくられた<strong>純度99.9％のNMN原料</strong>を使用しています。配合量だけでなく、毎日口にする原料の品質まで確かめて選べます。'],
       ['1日1球に、NMN250mgをシンプル配合。','毎日の食事だけでは補いにくいNMNを、<strong>1球250mg</strong>に凝縮。成分を足して豪華に見せるより、NMNを主役にして続けやすくする研究所発想です。'],
-      ['毎日口にするから、国内GMP認証工場で。','設計だけでなく製造背景も大切。成果LPでは、<strong>健康食品GMP認証を取得した国内工場</strong>で製造・梱包すると説明されています。']
+      ['毎日口にするから、国内GMP認証工場で。','毎日続けるものだから、つくられる環境にも目を向けたい。免疫分析研究センターのNMNは、<strong>健康食品GMP認証を取得した国内工場</strong>で製造・梱包されています。']
     ];
     const researchImages=[
       ['assets/official-ar-02b/img_17.webp','免疫分析研究センターとは',640,859],
@@ -97,6 +97,29 @@
     function renderProduct(){setTracker(4);$('#screen').innerHTML=phoneHeader('商品LP到達',100)+`<div class="product-mock"><img class="product-destination-pack" src="assets/official-product-nmn.webp" width="1364" height="2205" alt="免疫分析研究センター公式EC掲載のNMN商品パッケージ"><div class="eyebrow">Destination reached</div><h2>商品LPへの遷移を確認しました</h2><p class="intro">テスト経路：<br><b>${audience==='male'?'男性':'女性'} × ${format==='quiz'?'クイズ型':'アンケート型'}</b></p><small>本モックでは外部の商品ページへは送信しません。</small><button class="mock-cta" id="otherRoute">同じターゲットの別形式を試す</button><button class="back" id="closeEnd">テストを終了</button></div>`;bindClose();$('#otherRoute').onclick=()=>{format=format==='quiz'?'survey':'quiz';sync();step=0;answers=[];setTracker(1);renderIntro()};$('#closeEnd').onclick=()=>$('.close').click()}
     const renderProductByFormat=renderProduct;
     renderProduct=function(){renderProductByFormat();if(format==='quiz'){const route=$('.product-mock .intro b');if(route)route.textContent=`${audience==='male'?'男性':'女性'} × 記事LP`}}
+    function consumerizeCopy(root=$('#screen')){
+      const replacements=new Map([
+        ['記事＋アンケート｜1ページ完結','年齢対策アンケート｜全4問'],
+        ['記事＋クイズ｜1ページ完結','NMNの選び方｜約3分'],
+        ['記事LP｜公式画像で読む','NMNの選び方｜約3分'],
+        ['※提示された成果LPの記載内容をもとにした構成モック。公開時は最新の一次資料と照合。','※原料・配合量・製造に関する情報は、免疫分析研究センター公式サイトの表示に基づきます。'],
+        ['※公式記事LPの記載内容をもとに再構成。','※原料・配合量・製造に関する情報は、免疫分析研究センター公式サイトの表示に基づきます。'],
+        ['↓ 回答すると、次の設問がこの下に続きます','↓ この解説の下に、次の質問が続きます'],
+        ['条件は公開前に最新情報を確認。','お申し込み前に最新の販売条件をご確認ください。'],
+        ['商品LPで詳しい条件を見る（モック）','定期コースの内容を確認する'],
+        ['※本ページは構成検討用モックです。「インナーエイジングケア」は年齢に応じた栄養ケアを指します。健康食品であり、疾病の診断・治療・予防や効果を保証するものではありません。数値、原料、製造、研究関連の表現は、提示された成果LPを参照したもので、公開前に一次資料および最新販売条件との照合が必要です。','※「インナーエイジングケア」は年齢に応じた栄養ケアを指します。本品は健康食品であり、疾病の診断・治療・予防を目的としたものではありません。原料・配合量・製造に関する情報は、免疫分析研究センター公式サイトの表示に基づきます。']
+      ]);
+      const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;
+      while(node=walker.nextNode())for(const [before,after] of replacements)if(node.nodeValue.includes(before))node.nodeValue=node.nodeValue.replaceAll(before,after);
+      root.querySelectorAll('img[alt^="公式記事LP参考ビジュアル"]').forEach((img,i)=>img.alt=`免疫分析研究センターのNMNについて ${i+1}`);
+    }
+    const renderIntroConsumer=renderIntro;
+    renderIntro=function(){renderIntroConsumer();consumerizeCopy()}
+    const answerQuestionConsumer=answerQuestion;
+    answerQuestion=function(block,button,index){answerQuestionConsumer(block,button,index);setTimeout(()=>consumerizeCopy(),0)}
+    const renderResultConsumer=renderResult;
+    renderResult=function(){renderResultConsumer();consumerizeCopy()}
+    renderProduct=function(){location.href='https://meneki-shop.com/articles_c/atc_h05_nm_u_02a'}
     const p=new URLSearchParams(location.search);if(['male','female'].includes(p.get('audience')))audience=p.get('audience');if(['quiz','survey'].includes(p.get('format')))format=p.get('format');sync();
   </script>
 </body>
