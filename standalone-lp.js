@@ -8,7 +8,8 @@
   const override=document.createElement('style');
   override.textContent=`
     *{box-sizing:border-box}html{background:#e7eeec}body{margin:0;overflow-x:hidden;background:#e7eeec;color:#17383e;-webkit-font-smoothing:antialiased}
-    .standalone-shell{--lp-gold:#d5a82b;--lp-yellow:#ffe263;--lp-ink:#17383e;width:min(100%,430px);min-height:100vh;margin:0 auto;background:#f7faf9;box-shadow:0 0 44px rgba(17,50,55,.12)}
+    .standalone-shell{--lp-gold:#d5a82b;--lp-yellow:#ffe263;--lp-ink:#17383e;width:min(100%,430px);min-height:100vh;margin:0 auto;background:#f7faf9;box-shadow:0 0 44px rgba(17,50,55,.12);font-family:"Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro",serif;font-weight:400;font-feature-settings:"palt" 1,"kern" 1;font-kerning:normal;letter-spacing:.08em;text-spacing-trim:trim-start}
+    .standalone-shell :lang(en),.standalone-shell .latin{font-family:"Adobe Garamond Pro",Garamond,"Times New Roman",serif;font-feature-settings:"kern" 1;letter-spacing:.08em}.standalone-shell strong,.standalone-shell b{font-weight:500}
     .standalone-shell[data-lp-audience="female"]{--lp-gold:#c59a68;--lp-yellow:#f8d8d4;--lp-ink:#633f45}
     .standalone-shell .device{width:100%;height:auto;min-height:100vh;border:0;border-radius:0;box-shadow:none;overflow:visible;background:#f7faf9}
     .standalone-shell .device::before,.standalone-shell .close{display:none!important}
@@ -38,7 +39,7 @@
     .standalone-shell[data-lp-format="survey"] .question-no{float:right;margin:0;padding:5px 10px!important;background:transparent!important;color:#8b6a15!important;border:1px solid #d7bb64;border-radius:999px!important;font-size:10px!important}
     .standalone-shell[data-lp-format="survey"] .question-block .intro{text-align:center;font-size:12px}
     .standalone-shell[data-lp-format="survey"] .options{counter-reset:lpchoice;gap:11px;margin-top:18px}
-    .standalone-shell[data-lp-format="survey"] .option{counter-increment:lpchoice;min-height:58px;padding:13px 42px 13px 54px!important;border:1px solid #b9d3d0!important;border-radius:6px!important;background:#fff!important;box-shadow:0 4px 0 #d8e7e4;font-size:14px;font-weight:800}
+    .standalone-shell[data-lp-format="survey"] .option{counter-increment:lpchoice;min-height:58px;padding:13px 42px 13px 54px!important;border:1px solid #b9d3d0!important;border-radius:6px!important;background:#fff!important;box-shadow:0 4px 0 #d8e7e4;font-size:14px;font-weight:400;line-height:1.75;letter-spacing:.08em;font-feature-settings:"palt" 1,"kern" 1}
     .standalone-shell[data-lp-format="survey"] .option::before{content:counter(lpchoice)!important;left:14px!important;width:28px!important;height:28px!important;border:0!important;background:var(--lp-ink)!important;color:#fff;display:grid;place-items:center;font:900 13px/1 Arial,sans-serif;box-shadow:none!important}
     .standalone-shell[data-lp-format="survey"] .option::after{content:"›";position:absolute;right:16px;top:50%;transform:translateY(-54%);color:var(--lp-gold);font:900 28px/1 Georgia,serif}
     .standalone-shell[data-lp-format="survey"] .option.chosen{border-color:var(--lp-gold)!important;background:#fff8d8!important;box-shadow:0 4px 0 #d4ad36}
@@ -47,10 +48,11 @@
     .standalone-shell[data-lp-format="survey"] .insight-card::before{content:"ANSWER  /  研究所発想の解説";display:block;margin:0 -20px;padding:9px 14px;background:var(--lp-ink);color:#fff;font:900 11px/1.4 Arial,sans-serif;letter-spacing:.08em;text-align:center}
     .standalone-shell[data-lp-format="survey"] .insight-media{width:calc(100% + 40px)!important;margin:0 -20px!important}
     .standalone-shell[data-lp-format="survey"] .proof-metrics{display:grid;grid-template-columns:repeat(3,1fr);margin:0 -20px;border-top:3px solid var(--lp-gold);border-bottom:1px solid #d7c98f;background:linear-gradient(100deg,#fff4bd,#fffdf1)}
-    .standalone-shell[data-lp-format="survey"] .proof-metrics .metric{display:grid;place-items:center;min-height:62px;padding:8px 4px;border-right:1px solid #d9c277;color:var(--lp-ink);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:14px;font-weight:900;text-align:center}
+    .standalone-shell[data-lp-format="survey"] .proof-metrics .metric{display:grid;place-items:center;min-height:62px;padding:8px 4px;border-right:1px solid #d9c277;color:var(--lp-ink);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:14px;font-weight:500;line-height:1.55;letter-spacing:.08em;text-align:center}
     .standalone-shell[data-lp-format="survey"] .proof-metrics .metric:last-child{border-right:0}
     .standalone-shell[data-lp-format="survey"] .insight-card p{position:relative;margin:0;padding:20px 18px 8px!important;background:#fff;font-size:15px;line-height:2}
-    .standalone-shell[data-lp-format="survey"] .insight-card p::first-letter{font-size:1.5em;color:var(--lp-gold);font-weight:900}
+    .standalone-shell[data-lp-format="survey"] .insight-card p::first-letter{font-size:1.5em;color:var(--lp-gold);font-weight:500}
+    .standalone-shell[data-lp-format="survey"] .insight-card p strong,.standalone-shell[data-lp-format="survey"] .answer-feedback strong{display:inline;padding:.04em .22em;border:1px solid currentColor;background:transparent;font-weight:500;box-decoration-break:clone;-webkit-box-decoration-break:clone}
     .standalone-shell[data-lp-format="survey"] .insight-foot{padding:0 18px 8px!important}
     .standalone-shell[data-lp-format="survey"] .next-cue{margin:0 -20px;padding:15px 10px 22px;background:linear-gradient(#fff,#e9f5f3);color:var(--lp-ink);letter-spacing:.05em}
     .standalone-shell .article-offer{margin-left:0;margin-right:0;padding-bottom:26px;border:2px solid #d4b45a;background:linear-gradient(155deg,#173c44,#0d262c);box-shadow:0 12px 30px rgba(7,34,39,.25)}
