@@ -76,7 +76,7 @@
     .standalone-shell .question-visual svg rect[x="152"],.standalone-shell .question-visual svg text[x="277"],.standalone-shell .question-visual svg line,.standalone-shell .question-visual svg text[y="580"],.standalone-shell .question-no{display:none!important}
     .standalone-shell .consumer-story-hero{position:relative;margin:0 -20px;overflow:hidden;background:#234f4d;color:#fff}
     .standalone-shell .consumer-story-hero>img{display:block;width:100%;height:auto;min-height:540px;object-fit:cover;object-position:center}
-    .standalone-shell .consumer-hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,38,38,.02) 18%,rgba(8,40,39,.82) 100%)}
+    .standalone-shell .consumer-hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,250,249,0) 18%,rgba(47,103,101,.46) 100%)}
     .standalone-shell .consumer-hero-copy{position:absolute;left:0;right:0;bottom:0;padding:34px 26px 30px;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.42)}
     .standalone-shell .consumer-hero-copy small{display:inline-block;padding:5px 11px;border:1px solid rgba(255,255,255,.8);border-radius:999px;font:500 10px/1.4 Arial,sans-serif;letter-spacing:.12em}
     .standalone-shell .consumer-hero-copy h1{margin:13px 0 10px;font-size:29px;font-weight:500;line-height:1.55;letter-spacing:.08em}
