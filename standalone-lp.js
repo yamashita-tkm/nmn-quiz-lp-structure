@@ -53,6 +53,7 @@
     .standalone-shell[data-lp-format="survey"] .insight-card::before{content:"ANSWER  /  研究所発想の解説";display:block;margin:0 -20px;padding:10px 14px;background:var(--lp-aqua);color:#fff;font:500 11px/1.4 Arial,sans-serif;letter-spacing:.08em;text-align:center}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .insight-card::before{display:none}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .read-on-marker{display:block;width:calc(100% + 40px);height:auto;margin:0 -20px;background:#fff}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .proof-metrics-image{display:block;width:calc(100% + 40px);height:auto;margin:0 -20px;border:0}
     .standalone-shell[data-lp-format="survey"] .insight-media{width:calc(100% + 40px)!important;margin:0 -20px!important}
     .standalone-shell[data-lp-format="survey"] .proof-metrics{display:grid;grid-template-columns:repeat(3,1fr);margin:0 -20px;border-top:3px solid #d7c269;border-bottom:1px solid #ddd3a8;background:linear-gradient(100deg,#fff8d4,#fffef6)}
     .standalone-shell[data-lp-format="survey"] .proof-metrics .metric{display:grid;place-items:center;min-height:62px;padding:8px 4px;border-right:1px solid #d9c277;color:var(--lp-ink);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:14px;font-weight:500;line-height:1.55;letter-spacing:.08em;text-align:center}
