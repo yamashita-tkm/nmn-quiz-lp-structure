@@ -116,6 +116,12 @@
       const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;
       while(node=walker.nextNode())for(const [before,after] of replacements)if(node.nodeValue.includes(before))node.nodeValue=node.nodeValue.replaceAll(before,after);
       root.querySelectorAll('img[alt^="公式記事LP参考ビジュアル"]').forEach((img,i)=>img.alt=`免疫分析研究センターのNMNについて ${i+1}`);
+      if(audience==='male'&&format==='survey'){
+        const unwanted='※原料・配合量・製造に関する情報は、免疫分析研究センター公式サイトの表示に基づきます。';
+        const cleanup=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let textNode;
+        while(textNode=cleanup.nextNode())if(textNode.nodeValue.includes(unwanted))textNode.nodeValue=textNode.nodeValue.replaceAll(unwanted,'');
+        root.querySelectorAll('.insight-foot').forEach(el=>{if(!el.textContent.trim())el.remove()});
+      }
     }
     researchImages.splice(0,researchImages.length,
       ['assets/research-proof-story-v2.webp','研究・検査機関としてデータと向き合う姿勢',1200,1000],
@@ -135,7 +141,7 @@
       hero.innerHTML=`<img src="${isMale?'assets/lifestyle-active-man-v2.jpg?v=2':'assets/lifestyle-inner-care-woman-v2.jpg?v=2'}" width="1536" height="1024" alt="${isMale?'年齢を重ねてもいきいきと休日を楽しむ男性':'朝のインナーケア習慣を整える女性'}"><div class="consumer-hero-shade"></div><div class="consumer-hero-copy"><small>${isArticle?'INNER AGING CARE':'全4問・年齢対策アンケート'}</small><h1>${isMale?'これからの自分に、<br>内側からの習慣を。':'外側を整えてきた私が、<br>次に選んだ内側ケア。'}</h1><p>NMNを選ぶなら、配合量だけではなく、研究背景・原料・続けやすさ・製造まで確かめたい。</p></div>`;
     }
     const renderIntroConsumer=renderIntro;
-    renderIntro=function(){let nativeScrollIntoView;if(format==='quiz'){nativeScrollIntoView=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(options){if(this.classList?.contains('article-result'))return;return nativeScrollIntoView.call(this,options)};setTimeout(()=>{Element.prototype.scrollIntoView=nativeScrollIntoView},700)}renderIntroConsumer();buildOriginalHero();consumerizeCopy();document.documentElement.scrollTop=0;document.body.scrollTop=0;setTimeout(()=>{document.documentElement.style.scrollBehavior='auto';document.documentElement.scrollTop=0;document.body.scrollTop=0},500)}
+    renderIntro=function(){let nativeScrollIntoView;if(format==='quiz'){nativeScrollIntoView=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(options){if(this.classList?.contains('article-result'))return;return nativeScrollIntoView.call(this,options)};setTimeout(()=>{Element.prototype.scrollIntoView=nativeScrollIntoView},700)}renderIntroConsumer();buildOriginalHero();consumerizeCopy();if(audience==='male'&&format==='survey'){const intro=$('#begin')?.previousElementSibling;if(intro?.classList.contains('intro')){intro.className='intro intro-hook';intro.innerHTML=`<span class="intro-hook-kicker">答えた直後に、選ぶ基準がひとつ増える。</span><strong>「高配合だから」だけで、<br>決める前に。</strong><p>開発したのは誰か。原料の中身はどうか。毎日続けられる設計か。回答するたび、免疫センターのNMNがなぜ研究所発想なのかを、ひとつずつ明かします。</p><b>最後に、数字だけでは見えない<br>“選ぶ理由”がそろいます。</b>`}}document.documentElement.scrollTop=0;document.body.scrollTop=0;setTimeout(()=>{document.documentElement.style.scrollBehavior='auto';document.documentElement.scrollTop=0;document.body.scrollTop=0},500)}
     const answerQuestionConsumer=answerQuestion;
     answerQuestion=function(block,button,index){answerQuestionConsumer(block,button,index);setTimeout(()=>consumerizeCopy(),0)}
     const renderResultConsumer=renderResult;
