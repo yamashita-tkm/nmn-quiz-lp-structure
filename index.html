@@ -126,7 +126,7 @@
       hero.innerHTML=`<img src="${isMale?'assets/lifestyle-active-man-v1.jpg':'assets/lifestyle-inner-care-woman-v1.jpg'}" width="1536" height="1024" alt="${isMale?'年齢を重ねてもいきいきと休日を楽しむ男性':'朝のインナーケア習慣を整える女性'}"><div class="consumer-hero-shade"></div><div class="consumer-hero-copy"><small>${isArticle?'INNER AGING CARE':'全4問・年齢対策アンケート'}</small><h1>${isMale?'これからの自分に、<br>内側からの習慣を。':'外側を整えてきた私が、<br>次に選んだ内側ケア。'}</h1><p>NMNを選ぶなら、配合量だけではなく、研究背景・原料・続けやすさ・製造まで確かめたい。</p></div>`;
     }
     const renderIntroConsumer=renderIntro;
-    renderIntro=function(){renderIntroConsumer();buildOriginalHero();consumerizeCopy();window.scrollTo({top:0,left:0,behavior:'auto'})}
+    renderIntro=function(){let nativeScrollIntoView;if(format==='quiz'){nativeScrollIntoView=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(options){if(this.classList?.contains('article-result'))return;return nativeScrollIntoView.call(this,options)};setTimeout(()=>{Element.prototype.scrollIntoView=nativeScrollIntoView},700)}renderIntroConsumer();buildOriginalHero();consumerizeCopy();document.documentElement.scrollTop=0;document.body.scrollTop=0;setTimeout(()=>{document.documentElement.style.scrollBehavior='auto';document.documentElement.scrollTop=0;document.body.scrollTop=0},500)}
     const answerQuestionConsumer=answerQuestion;
     answerQuestion=function(block,button,index){answerQuestionConsumer(block,button,index);setTimeout(()=>consumerizeCopy(),0)}
     const renderResultConsumer=renderResult;
