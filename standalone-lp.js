@@ -34,6 +34,7 @@
     .standalone-shell[data-lp-format="survey"] .question-block::before,.standalone-shell[data-lp-format="survey"] .question-block::after{display:none!important}
     .standalone-shell .question-visual{display:block;margin:0 -20px 18px;background:var(--lp-pale)}
     .standalone-shell .question-visual svg{display:block;width:100%;height:auto}
+    .standalone-shell .question-visual.question-image-only img{display:block;width:100%;height:auto;min-height:0;max-height:none;object-fit:contain}
     .standalone-shell .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
     .standalone-shell[data-lp-format="survey"] .question-prompt{display:inline-block;margin:0 0 0 2px;padding:5px 11px;background:var(--lp-yellow);color:var(--lp-ink);font-size:10px;transform:rotate(-1deg)}
     .standalone-shell[data-lp-format="survey"] .question-no{float:right;margin:0;padding:5px 10px!important;background:transparent!important;color:#8b6a15!important;border:1px solid #d7bb64;border-radius:999px!important;font-size:10px!important}
