@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="124" viewBox="0 0 750 124" role="img" aria-labelledby="title desc">
+  <title id="title">続けてお読みください</title>
+  <desc id="desc">下向きの矢印で次の解説へ誘導するマーク</desc>
+  <rect width="750" height="124" fill="#ffffff"/>
+  <line x1="62" y1="62" x2="264" y2="62" stroke="#b9ddda" stroke-width="2"/>
+  <line x1="486" y1="62" x2="688" y2="62" stroke="#b9ddda" stroke-width="2"/>
+  <text x="375" y="37" text-anchor="middle" fill="#111111" font-family="Helvetica Neue, Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif" font-size="18" letter-spacing="3">続けてお読みください</text>
+  <path d="M342 57l33 27 33-27" fill="none" stroke="#28a9a4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M352 82l23 19 23-19" fill="none" stroke="#75cbc7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
