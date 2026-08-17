@@ -11,6 +11,7 @@
     .standalone-shell{--lp-gold:#cbb45f;--lp-yellow:#fff3b4;--lp-ink:#237d79;--lp-aqua:#45bdb5;--lp-pale:#effaf8;--lp-coral:#e9515c;width:min(100%,430px);min-height:100vh;margin:0 auto;background:#fff;box-shadow:0 0 36px rgba(43,126,122,.1);font-family:"Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro",serif;font-weight:400;font-feature-settings:"palt" 1,"kern" 1;font-kerning:normal;letter-spacing:.08em;text-spacing-trim:trim-start}
     .standalone-shell :lang(en),.standalone-shell .latin{font-family:"Adobe Garamond Pro",Garamond,"Times New Roman",serif;font-feature-settings:"kern" 1;letter-spacing:.08em}.standalone-shell strong,.standalone-shell b{font-weight:500}
     .standalone-shell[data-lp-audience="female"]{--lp-gold:#cfb675;--lp-yellow:#fff0c6;--lp-ink:#277f7b;--lp-aqua:#55bfb6;--lp-pale:#f3fbfa;--lp-coral:#e95863}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"],.standalone-shell[data-lp-audience="male"][data-lp-format="survey"] *{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif!important}
     .standalone-shell .device{width:100%;height:auto;min-height:100vh;border:0;border-radius:0;box-shadow:none;overflow:visible;background:#fff}
     .standalone-shell .device::before,.standalone-shell .close{display:none!important}
     .standalone-shell .screen{height:auto;min-height:100vh;overflow:visible;padding:14px 20px 0;scroll-behavior:smooth}
@@ -29,6 +30,9 @@
     .standalone-shell .proof-strip::before{content:"回答しながら分かること";position:absolute;left:50%;top:-24px;transform:translateX(-50%) rotate(-1deg);width:max-content;padding:5px 12px;background:var(--lp-ink);color:#fff;font-size:11px;font-weight:900}
     .standalone-shell[data-lp-format="survey"] #begin{margin:18px -4px 12px;width:calc(100% + 8px);min-height:62px;border-radius:999px;border:3px solid #fff;background:linear-gradient(180deg,#f46c72,var(--lp-coral));box-shadow:0 5px 0 #bd3741,0 12px 24px rgba(215,70,80,.2);font-size:17px;letter-spacing:.08em;text-shadow:0 1px 0 rgba(0,0,0,.18)}
     .standalone-shell[data-lp-format="survey"] #begin::after{content:"  ▶"}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .intro-hook{margin:0 -20px;padding:28px 24px 24px;background:linear-gradient(180deg,#eef9f8,#fff);color:#315f61;text-align:center}
+    .standalone-shell .intro-hook-kicker{display:inline-block;margin-bottom:13px;padding:5px 10px;border:1px solid #67bdb8;background:#fff;color:#197b79;font-size:11px;font-weight:500;letter-spacing:.08em}
+    .standalone-shell .intro-hook>strong{display:block;color:#183f42;font-size:24px;font-weight:500;line-height:1.65;letter-spacing:.08em}.standalone-shell .intro-hook>p{margin:15px 0 14px;font-size:14px;line-height:2}.standalone-shell .intro-hook>b{display:block;padding:12px;border-top:1px solid #cfb65b;border-bottom:1px solid #cfb65b;color:#247f7c;font-size:15px;font-weight:500;line-height:1.75}
     .standalone-shell[data-lp-format="survey"] .question-flow{counter-reset:lpquestion}
     .standalone-shell[data-lp-format="survey"] .question-block{counter-increment:lpquestion;margin:0 -20px!important;padding:0 20px 30px!important;border:0!important;border-radius:0!important;background:linear-gradient(180deg,#fff 0 78%,var(--lp-pale) 100%)!important;box-shadow:none!important;outline:0;overflow:hidden}
     .standalone-shell[data-lp-format="survey"] .question-block::before,.standalone-shell[data-lp-format="survey"] .question-block::after{display:none!important}
