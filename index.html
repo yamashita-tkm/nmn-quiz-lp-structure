@@ -160,7 +160,17 @@
     const renderIntroWithTypography=renderIntro;
     renderIntro=function(){renderIntroWithTypography();if(audience==='male'&&format==='survey'){$('#begin').textContent='今の年齢対策を、3問で見直す'}applyMaleGothicScale()}
     const answerQuestionConsumer=answerQuestion;
-    answerQuestion=function(block,button,index){answerQuestionConsumer(block,button,index);if(audience==='male'&&format==='survey'){const insight=block.nextElementSibling;if(insight?.classList.contains('insight-card')&&!insight.querySelector('.read-on-marker')){const marker=document.createElement('img');marker.className='read-on-marker';marker.src='assets/read-on-arrow-v1.svg';marker.width=750;marker.height=124;marker.alt='続けて下の解説をお読みください';insight.prepend(marker)}}setTimeout(()=>{consumerizeCopy();applyMaleGothicScale()},0)}
+    answerQuestion=function(block,button,index){
+      answerQuestionConsumer(block,button,index);
+      if(audience==='male'&&format==='survey'){
+        const insight=block.nextElementSibling;
+        if(insight?.classList.contains('insight-card')){
+          if(!insight.querySelector('.read-on-marker')){const marker=document.createElement('img');marker.className='read-on-marker';marker.src='assets/read-on-arrow-v1.svg';marker.width=750;marker.height=124;marker.alt='続けて下の解説をお読みください';insight.prepend(marker)}
+          if(index===0){const metrics=insight.querySelector('.proof-metrics');if(metrics){const image=document.createElement('img');image.className='proof-metrics-image';image.src='assets/male-survey-proof1-metrics-v1.jpg?v=1';image.width=3266;image.height=1082;image.alt='研究・検査、データ姿勢、解析背景';metrics.replaceWith(image)}}
+        }
+      }
+      setTimeout(()=>{consumerizeCopy();applyMaleGothicScale()},0)
+    }
     const renderResultConsumer=renderResult;
     renderResult=function(){renderResultConsumer();const story=$('.story-photo');if(story){story.src=audience==='male'?'assets/lifestyle-active-man-v2.jpg?v=2':'assets/lifestyle-inner-care-woman-v2.jpg?v=2';story.alt=audience==='male'?'年齢を重ねてもいきいきと休日を楽しむ男性':'朝のインナーケア習慣を整える女性'}const offer=$('.article-offer');if(offer){offer.className='article-offer consumer-offer';offer.innerHTML=`<div class="consumer-offer-lead"><small>研究所発想のNMNを、毎日の習慣に。</small><h3>選ぶ理由を確かめた今、<br>無理なく始めてみませんか。</h3></div><img class="consumer-pack" src="assets/official-product-nmn.webp" width="1364" height="2205" loading="lazy" alt="免疫分析研究センター NMNの商品パッケージ"><div class="consumer-price"><span>定期初回限定 50％OFF</span><strong>2,268<small>円（税込）</small></strong><p>2回目以降15％OFF 3,855円（税込）・送料無料</p></div><button class="mock-cta" id="toProduct">定期コースの内容を確認する</button><p class="consumer-offer-note">※1世帯1回限り。2回目以降の価格・お届け・解約条件は、お申し込み前に販売ページでご確認ください。</p>`;$('#toProduct').onclick=renderProduct}consumerizeCopy()}
     const renderResultConsumerOffer=renderResult;
