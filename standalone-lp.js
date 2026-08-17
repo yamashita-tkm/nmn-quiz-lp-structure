@@ -81,6 +81,8 @@
     .standalone-shell .consumer-hero-copy small{display:inline-block;padding:5px 11px;border:1px solid rgba(255,255,255,.8);border-radius:999px;font:500 10px/1.4 Arial,sans-serif;letter-spacing:.12em}
     .standalone-shell .consumer-hero-copy h1{margin:13px 0 10px;font-size:29px;font-weight:500;line-height:1.55;letter-spacing:.08em}
     .standalone-shell .consumer-hero-copy p{margin:0;font-size:13px;line-height:1.9;letter-spacing:.06em}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .male-survey-image-hero{min-height:0;background:#fff;line-height:0}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .male-survey-image-hero>.male-survey-fv-image{position:relative;display:block;width:100%;height:auto;min-height:0;max-height:none;object-fit:contain}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .male-survey-lab-hero{min-height:690px;background:#eef8fb;color:#267c82}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .male-survey-lab-bg{position:absolute;inset:0;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center}
     .standalone-shell .male-survey-brand{position:relative;z-index:2;margin:0 -1px;padding:17px 18px 15px;background:linear-gradient(100deg,#3996df,#35bbb5);color:#fff;text-align:center;text-shadow:0 1px 5px rgba(14,104,137,.18)}
