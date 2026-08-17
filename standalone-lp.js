@@ -59,6 +59,7 @@
     .standalone-shell[data-lp-format="survey"] .proof-metrics .metric:last-child{border-right:0}
     .standalone-shell[data-lp-format="survey"] .insight-card p{position:relative;margin:0;padding:20px 18px 8px!important;background:#fff;font-size:15px;line-height:2}
     .standalone-shell[data-lp-format="survey"] .insight-card p::first-letter{font-size:1.5em;color:var(--lp-gold);font-weight:500}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .insight-card p::first-letter{font-size:inherit;color:inherit;font-weight:inherit}
     .standalone-shell[data-lp-format="survey"] .insight-card p strong,.standalone-shell[data-lp-format="survey"] .answer-feedback strong{display:inline;padding:.04em .22em;border:1px solid currentColor;background:transparent;font-weight:500;box-decoration-break:clone;-webkit-box-decoration-break:clone}
     .standalone-shell[data-lp-format="survey"] .insight-foot{padding:0 18px 8px!important}
     .standalone-shell[data-lp-format="survey"] .next-cue{margin:0 -20px;padding:15px 10px 22px;background:linear-gradient(#fff,var(--lp-pale));color:var(--lp-ink);letter-spacing:.08em}
