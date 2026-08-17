@@ -129,7 +129,7 @@
       }
     }
     researchImages.splice(0,researchImages.length,
-      ['assets/research-proof-story-v2.webp','研究・検査機関としてデータと向き合う姿勢',1200,1000],
+      ['assets/male-survey-facility-v1.png?v=1','免疫分析研究センターの研究施設',740,422],
       ['assets/lifestyle-couple-choice-v2.jpg?v=2','夫婦で原料や配合内容を確かめる様子',1536,1024],
       ['assets/lifestyle-family-routine-v2.jpg?v=2','家族で毎日のインナーケア習慣を考える様子',1536,1024],
       ['assets/research-sample-v1.webp','国内の研究・品質管理をイメージした様子',1440,1080]
@@ -179,6 +179,7 @@
       if(audience!=='male'||format!=='survey')return;
       const reasonHeading=$('.editor-note b');if(reasonHeading){reasonHeading.textContent='免疫分析研究センターが選ばれる理由';reasonHeading.classList.add('keep-white')}
       const resultVisual=$('.science-break img');if(resultVisual){resultVisual.src='assets/male-survey-result-product-4x3-v1.jpg?v=1';resultVisual.width=1536;resultVisual.height=1152;resultVisual.alt='木製デスクの中央に置かれた免疫分析研究センターのNMN'}
+      const handsVisual=$('.hands-break');if(handsVisual)handsVisual.remove();
       const offer=$('.article-offer');if(!offer)return;
       offer.className='article-offer official-offer male-survey-articleb-offer';
       offer.innerHTML=`<img src="assets/official-ar-02b/img_23.webp" alt="免疫分析センター NMN 初回限定価格50％OFF 2,268円（税込）"><img src="assets/official-ar-02b/img_24.webp" alt="1日あたり約76円と初回は試しやすい価格"><img src="assets/official-ar-02b/img_25.webp" alt="2回目以降3,855円（税込）、送料無料"><img src="assets/official-ar-02b/img_26.webp" alt="1世帯1回限り"><img src="assets/official-ar-02b/cta_btn_text.webp" alt="初回半額"><button class="official-cta" id="toProduct" aria-label="免疫分析センターのNMNを始める"><img src="assets/official-ar-02b/cta_btn.webp" alt="免疫分析センターのNMNを始めたい方はこちら"></button><p>※定期初回限定。2回目以降の価格・送料・お届け・解約条件等は、遷移先の最新表示をご確認ください。</p>`;
