@@ -65,8 +65,23 @@
     @media(max-width:430px){.standalone-shell{width:100%;box-shadow:none}}
   `;
   document.head.append(override);
+  const continuity=document.createElement('style');
+  continuity.textContent=`
+    .standalone-shell .official-flow{display:block;line-height:0;font-size:0}
+    .standalone-shell .official-flow img,.standalone-shell .insight-media,.standalone-shell .article-proof img,.standalone-shell .official-offer>img,.standalone-shell .copy-baked>img{display:block;width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;margin-top:0!important;margin-bottom:0!important;border:0!important}
+    .standalone-shell .question-visual{height:auto!important;overflow:visible!important;line-height:0}
+    .standalone-shell .question-visual svg{display:block;width:100%!important;height:auto!important;overflow:visible}
+    .standalone-shell .brand-canvas{display:block;margin:0!important}
+    .standalone-shell .phone-head,.standalone-shell .mini-progress,.standalone-shell #screen>small,.standalone-shell .experience-strip{display:none!important}
+    .standalone-shell .question-visual svg rect[x="152"],.standalone-shell .question-visual svg text[x="277"],.standalone-shell .question-visual svg line,.standalone-shell .question-visual svg text[y="580"],.standalone-shell .question-no{display:none!important}
+  `;
+  document.head.append(continuity);
   const audience=host.dataset.lpAudience;
   const format=host.dataset.lpFormat;
   const boot=`\n audience=${JSON.stringify(audience)};format=${JSON.stringify(format)};step=0;answers=[];document.querySelector('.device').dataset.audience=audience;document.querySelector('.device').dataset.format=format;renderIntro();`;
   Function(script.textContent+boot)();
+  history.replaceState(null,'',location.pathname);
+  window.scrollTo({top:0,left:0,behavior:'auto'});
+  document.documentElement.scrollTop=0;
+  document.body.scrollTop=0;
 })().catch(error=>{document.body.innerHTML='<p style="padding:32px;font-family:sans-serif">ページを読み込めませんでした。トップページから再度お試しください。</p>';console.error(error)});
