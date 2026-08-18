@@ -30,7 +30,7 @@
     .standalone-shell .proof-strip::before{content:"回答しながら分かること";position:absolute;left:50%;top:-24px;transform:translateX(-50%) rotate(-1deg);width:max-content;padding:5px 12px;background:var(--lp-ink);color:#fff;font-size:11px;font-weight:900}
     .standalone-shell[data-lp-format="survey"] #begin{margin:18px -4px 12px;width:calc(100% + 8px);min-height:62px;border-radius:999px;border:3px solid #fff;background:linear-gradient(180deg,#f46c72,var(--lp-coral));box-shadow:0 5px 0 #bd3741,0 12px 24px rgba(215,70,80,.2);font-size:17px;letter-spacing:.08em;text-shadow:0 1px 0 rgba(0,0,0,.18)}
     .standalone-shell[data-lp-format="survey"] #begin::after{content:"  ▶"}
-    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .intro-age-note{display:block;margin:-3px 0 13px;color:#555!important;font-size:11px!important;line-height:1.5;text-align:center}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] #screen>.intro-age-note{display:block!important;margin:-5px 0 15px!important;padding:0!important;background:#fff;color:#555!important;font-size:11px!important;font-weight:400;line-height:1.5;text-align:center}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] #begin[hidden]+.intro-age-note{display:none}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .intro-hook{margin:0 -20px;padding:28px 24px 24px;background:linear-gradient(180deg,#eef9f8,#fff);color:#315f61;text-align:center}
     .standalone-shell .intro-hook-kicker{display:inline-block;margin-bottom:13px;padding:5px 10px;border:1px solid #67bdb8;background:#fff;color:#197b79;font-size:11px;font-weight:500;letter-spacing:.08em}
