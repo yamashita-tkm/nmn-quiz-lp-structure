@@ -122,6 +122,7 @@
     .standalone-shell .consumer-price>span{display:block;color:#8a6510;font-size:12px}.standalone-shell .consumer-price strong{display:block;color:#e24d58;font:500 42px/1.25 Georgia,serif}.standalone-shell .consumer-price strong small{font:500 13px/1.4 "Yu Mincho",serif}.standalone-shell .consumer-price p{margin:5px 0 0!important;padding:0!important;background:none!important;color:#526b69!important;font-size:11px!important}
     .standalone-shell .consumer-offer .mock-cta{margin-top:18px;min-height:62px;border:3px solid #fff;border-radius:999px;background:linear-gradient(#f56b73,#e9515c);box-shadow:0 5px 0 #b7353e;color:#fff;font-size:16px}
     .standalone-shell .consumer-offer-note{margin:14px 0 0!important;padding:0!important;background:none!important;color:#687977!important;font-size:10px!important;line-height:1.8!important}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .voice-dosage-note{display:block;margin:-16px 0 22px;padding:0 0 0 5px;color:#555!important;font-size:11px!important;font-weight:400;line-height:1.5;text-align:left}
   `;
   document.head.append(continuity);
   const audience=host.dataset.lpAudience;
