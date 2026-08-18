@@ -193,7 +193,7 @@
       if(resultParagraphs[1])resultParagraphs[1].innerHTML='<strong>成分の数を追求するのではなく、1日の飲む量と、生産者に確かな研究実績がNMN選びには重要</strong>ということです。';
       if(resultParagraphs[2])resultParagraphs[2].textContent='免疫分析研究センターのNMNは「1日あたりの価格、1日あたりの飲む数」をシンプルに、忙しい現代人だからこそ徹底的に無駄を削ぎ落とした処方としてご用意いたしました。';
       if(femaleLean&&resultParagraphs[2])resultParagraphs[2].textContent='免疫分析研究センターのNMNは、1日あたりの価格と飲む数を分かりやすく設計。美容も仕事も自分の時間も大切にしたい毎日に、無理なく取り入れやすいシンプルな処方です。';
-      const resultVisual=$('.science-break img');if(resultVisual){resultVisual.src='assets/male-survey-result-product-4x3-v1.jpg?v=1';resultVisual.width=1536;resultVisual.height=1152;resultVisual.alt='木製デスクの中央に置かれた免疫分析研究センターのNMN'}
+      const resultVisual=$('.science-break img');if(resultVisual){resultVisual.src=femaleLean?'assets/female-survey-result-routine-v1.png?v=1':'assets/male-survey-result-product-4x3-v1.jpg?v=1';resultVisual.width=femaleLean?1000:1536;resultVisual.height=femaleLean?1000:1152;resultVisual.alt=femaleLean?'朝の光が入る食卓でNMNサプリメントと1粒を手に取る女性の手元':'木製デスクの中央に置かれた免疫分析研究センターのNMN'}
       const handsVisual=$('.hands-break');if(handsVisual)handsVisual.remove();
       const offer=$('.article-offer');if(!offer)return;
       offer.className='article-offer official-offer male-survey-articleb-offer';
