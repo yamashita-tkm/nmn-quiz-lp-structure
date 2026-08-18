@@ -158,7 +158,7 @@
       });
     }
     const renderIntroWithTypography=renderIntro;
-    renderIntro=function(){renderIntroWithTypography();if(audience==='male'&&format==='survey'){const begin=$('#begin');begin.textContent='今の年齢対策*を、3問で見直す';applyMaleGothicScale();const note=document.createElement('small');note.className='intro-age-note';note.textContent='※年齢に応じた栄養ケア';begin.after(note)}else applyMaleGothicScale()}
+    renderIntro=function(){renderIntroWithTypography();if(audience==='male'&&format==='survey'){const begin=$('#begin');begin.textContent='今の年齢対策*を、3問で見直す';applyMaleGothicScale();const note=document.createElement('p');note.className='intro-age-note';note.dataset.gothicScaled='true';note.textContent='※年齢に応じた栄養ケアのこと';begin.after(note)}else applyMaleGothicScale()}
     const answerQuestionConsumer=answerQuestion;
     answerQuestion=function(block,button,index){
       answerQuestionConsumer(block,button,index);
