@@ -138,8 +138,8 @@
       const hero=$('.official-flow');if(!hero)return;
       const isMale=audience==='male',isArticle=format==='quiz';
       if(femaleLean&&!isArticle){
-        hero.className='consumer-story-hero female-lean-hero';
-        hero.innerHTML=`<img src="assets/female-label-check-v1.png" width="1536" height="1024" alt="朝の光が入る自宅でサプリメントの表示を確認する50代女性"><div class="female-lean-shade"></div><div class="female-lean-copy"><small>全3問・約1分</small><h1>鏡を見るたび、<br>外側のケアだけで<br>いいのかなと思う。</h1><p>これからの私に合うNMN選びを、研究・原料・続けやすさから見直してみませんか。</p></div><p class="male-survey-pr" data-gothic-scaled="true">PR：免疫分析研究センター</p>`;
+        hero.className='consumer-story-hero female-lean-hero female-survey-image-hero';
+        hero.innerHTML=`<img class="female-survey-fv-image" src="assets/female-survey-fv-v2.png?v=1" width="1152" height="2048" alt="あなたに最適なNMNは。全3問・約30秒で年齢対策にぴったりなNMNを診断"><p class="male-survey-pr" data-gothic-scaled="true">PR：免疫分析研究センター</p>`;
         return;
       }
       if(isMale&&!isArticle){
