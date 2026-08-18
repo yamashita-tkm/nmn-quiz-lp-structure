@@ -186,6 +186,7 @@
       const resultParagraphs=$$('.article-copy p');
       if(resultParagraphs[1])resultParagraphs[1].innerHTML='<strong>成分の数を追求するのではなく、1日の飲む量と、生産者に確かな研究実績がNMN選びには重要</strong>ということです。';
       if(resultParagraphs[2])resultParagraphs[2].textContent='免疫分析研究センターのNMNは「1日あたりの価格、1日あたりの飲む数」をシンプルに、忙しい現代人だからこそ徹底的に無駄を削ぎ落とした処方としてご用意いたしました。';
+      const summaryVoice=$('.article-copy .voice');if(summaryVoice){summaryVoice.textContent=summaryVoice.textContent.replace('1日1球250mg','1日1球*250mg');if(!summaryVoice.nextElementSibling?.classList.contains('voice-dosage-note')){const note=document.createElement('small');note.className='voice-dosage-note';note.dataset.gothicScaled='true';note.textContent='※目安量';summaryVoice.after(note)}}
       const resultVisual=$('.science-break img');if(resultVisual){resultVisual.src='assets/male-survey-result-product-4x3-v1.jpg?v=1';resultVisual.width=1536;resultVisual.height=1152;resultVisual.alt='木製デスクの中央に置かれた免疫分析研究センターのNMN'}
       const handsVisual=$('.hands-break');if(handsVisual)handsVisual.remove();
       const offer=$('.article-offer');if(!offer)return;
