@@ -187,12 +187,12 @@
       renderResultConsumerOffer();
       if(audience!=='male'||format!=='survey')return;
       const reasonHeading=$('.editor-note b');if(reasonHeading){reasonHeading.textContent='免疫分析研究センターが選ばれる理由';reasonHeading.classList.add('keep-white')}
-      const reasonList=$('.editor-note p');if(reasonList){reasonList.innerHTML=reasonList.innerHTML.replace('③1日1球に250mg','③1日1球*').replace('④NMNを主役にしたシンプル配合','④NMNを主役にしたシンプル配合').replace('⑤国内GMP認証工場で製造','⑤国内GMP認証工場で製造')}
+      const reasonList=$('.editor-note p');if(reasonList){reasonList.innerHTML=reasonList.innerHTML.replace('③1日1球に250mg','③1日1球*').replace('④NMNを主役にしたシンプル配合','④NMNを主役にしたシンプル配合').replace('⑤国内GMP認証工場で製造','⑤国内GMP認証工場で製造');if(!reasonList.nextElementSibling?.classList.contains('reason-dosage-note')){const note=document.createElement('small');note.className='reason-dosage-note';note.textContent='※目安量';reasonList.after(note)}}
       const resultIntro=$('.article-top .intro');if(resultIntro)resultIntro.remove();
       const resultParagraphs=$$('.article-copy p');
       if(resultParagraphs[1])resultParagraphs[1].innerHTML='配合量の大きさだけではなく、<strong>誰が開発し、どのように品質を確かめ、毎日無理なく続けられるか</strong>。この3つを確認することが、納得できるNMN選びにつながります。';
       if(resultParagraphs[2])resultParagraphs[2].textContent='免疫分析研究センターのNMNは、研究・検査機関としての背景、純度99.9％、1日1球を目安に250mg、NMNを主役にしたシンプルな配合設計、国内GMP認定工場での製造という情報を公開しています。';
-      const summaryVoice=$('.article-copy .voice');if(summaryVoice){summaryVoice.textContent=summaryVoice.textContent.replace('1日1球250mg','1日1球*の')}
+      const summaryVoice=$('.article-copy .voice');if(summaryVoice){summaryVoice.textContent=summaryVoice.textContent.replace('1日1球250mg','1日1球*の');if(!summaryVoice.nextElementSibling?.classList.contains('voice-dosage-note')){const note=document.createElement('small');note.className='voice-dosage-note';note.textContent='※目安量';summaryVoice.after(note)}}
       $$('.insight-foot').forEach(el=>el.remove());
       const editorNote=$('.editor-note');if(editorNote&&!editorNote.nextElementSibling?.classList.contains('male-nmn-comparison')){const comparison=document.createElement('img');comparison.className='male-nmn-comparison';comparison.src='assets/male-nmn-comparison-v1.png?v=1';comparison.width=600;comparison.height=600;comparison.loading='lazy';comparison.alt='免疫分析研究センターNMNと他社商品の価格、配合量、1日の目安量の比較';editorNote.after(comparison)}
       const resultVisual=$('.science-break img');if(resultVisual){resultVisual.src='assets/male-survey-result-product-4x3-v1.jpg?v=1';resultVisual.width=1536;resultVisual.height=1152;resultVisual.alt='木製デスクの中央に置かれた免疫分析研究センターのNMN'}
