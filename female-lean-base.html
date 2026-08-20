@@ -192,6 +192,7 @@
       if(audience!=='male'||format!=='survey')return;
       const reasonHeading=$('.editor-note b');if(reasonHeading){reasonHeading.textContent='免疫分析研究センターが選ばれる理由';reasonHeading.classList.add('keep-white')}
       const reasonList=$('.editor-note p');if(reasonList){reasonList.innerHTML=reasonList.innerHTML.replace('③1日1球に250mg',femaleLean?'③1日1球*':'③1日1球*に250mg')+'<br><small class="dosage-note" data-gothic-scaled="true">※目安量</small>'}
+      const reasonNote=$('.editor-note');if(femaleLean&&reasonNote){const comparison=document.createElement('figure');comparison.className='female-lean-comparison';comparison.innerHTML='<img src="assets/female-lean-nmn-comparison-v1.png?v=1" width="600" height="600" loading="lazy" alt="NMN商品の月額、1日あたりのコスト、1球あたりの配合量、1日あたりの目安量の比較">';reasonNote.after(comparison)}
       const resultIntro=$('.article-top .intro');if(resultIntro)resultIntro.remove();
       const resultParagraphs=$$('.article-copy p');
       if(femaleLean&&resultParagraphs[0])resultParagraphs[0].textContent='スキンケアや食事には気を配ってきた。だからこそ、これから内側に取り入れるものも、雰囲気だけではなく、根拠と続けやすさまで納得して選びたい。';
