@@ -1,6 +1,6 @@
 (async()=>{
   const host=document.querySelector('[data-lp-audience][data-lp-format]');
-  const source=await fetch('female-lean-base.html?standalone=20260820-feedback01',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
+  const source=await fetch('female-lean-base.html?standalone=20260820-feedback02',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
   const doc=new DOMParser().parseFromString(source,'text/html');
   const style=doc.querySelector('style');
   const script=doc.querySelector('script');
@@ -95,6 +95,7 @@
     .standalone-shell[data-lp-variant="female-lean"] .intro-hook-kicker{border-color:#d8a3aa;color:#9b5661}
     .standalone-shell[data-lp-variant="female-lean"] .intro-hook>strong{color:#55373c}
     .standalone-shell[data-lp-variant="female-lean"] .option{border-color:#ddb9bd!important;box-shadow:0 4px 0 #f2dcde}
+    .standalone-shell[data-lp-variant="female-lean"] .article-copy .result-yellow-marker{padding:0 .08em!important;border:0!important;background:linear-gradient(transparent 58%,#ffe45c 58%)!important;box-decoration-break:clone;-webkit-box-decoration-break:clone}
     @media(max-width:430px){.standalone-shell{width:100%;box-shadow:none}}
   `;
   document.head.append(override);
