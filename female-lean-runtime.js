@@ -1,6 +1,6 @@
 (async()=>{
   const host=document.querySelector('[data-lp-audience][data-lp-format]');
-  const source=await fetch('female-lean-base.html?standalone=20260820-feedback02',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
+  const source=await fetch('female-lean-base.html?standalone=20260821-feedback03',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
   const doc=new DOMParser().parseFromString(source,'text/html');
   const style=doc.querySelector('style');
   const script=doc.querySelector('script');
