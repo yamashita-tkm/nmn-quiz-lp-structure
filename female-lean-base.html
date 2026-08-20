@@ -74,7 +74,7 @@
       ['毎日口にするから、国内GMP認証工場で。','毎日続けるものだから、つくられる環境にも目を向けたい。免疫分析研究センターのNMNは、<strong>健康食品GMP認証を取得した国内工場</strong>で製造・梱包されています。']
     ];
     const femaleSurveyResearchTips=[
-      ['開発元の背景まで確認する。','毎日取り入れるものだから、雰囲気だけでなく、<strong>どのような組織が開発に携わっているか</strong>も確認したいポイントです。免疫分析研究センターは、研究・検査に向き合ってきた背景を商品開発に生かしています。'],
+      ['開発元の背景まで確認する。','免疫分析研究センターは、延べ1,000人以上に対して免疫機能検査を実施してきたほか、サプリメントの臨床試験も行う研究機関。商品を華やかに見せる前に、確認できるデータを大切にする姿勢が土台にあります。'],
       ['品質は、確認できる情報から判断する。','価格や配合量だけでは、原料や品質管理までは判断できません。純度、製造環境、品質管理など、<strong>公開されている情報を一つずつ確認すること</strong>が大切です。'],
       ['自分の毎日に無理なく続けられるかを見る。','免疫分析研究センターのNMNは、<strong>1日1球を目安に250mg</strong>、NMNを主役にしたシンプルな配合設計。飲む数や価格も含め、習慣に取り入れやすいかを確認しましょう。']
     ];
@@ -91,7 +91,7 @@
     const questionVisualDefault=questionVisual;
     questionVisual=function(index,title,total){
       if(audience==='male'&&format==='survey'&&index===0)return `<figure class="question-visual question-image-only"><img src="assets/male-survey-question1-v2.jpg?v=1" width="2048" height="2048" alt="開発元の背景を確認するイメージ"></figure>`;
-      if(audience==='male'&&format==='survey'&&index===1)return `<figure class="question-visual question-image-only"><img src="assets/male-survey-question2-v2.jpg?v=1" width="2048" height="2048" alt="NMNの品質情報を確認するイメージ"></figure>`;
+      if(audience==='male'&&format==='survey'&&index===1)return `<figure class="question-visual question-image-only"><img src="${femaleLean?'assets/female-lean-question2-v2.png?v=1':'assets/male-survey-question2-v2.jpg?v=1'}" width="2048" height="2048" alt="NMNの品質情報を確認するイメージ"></figure>`;
       if(audience==='male'&&format==='survey'&&index===2)return `<figure class="question-visual question-image-only"><img src="${femaleLean?'assets/female-survey-question3-v1.png?v=1':'assets/male-survey-question3-v2.jpg?v=1'}" width="${femaleLean?'1200':'1536'}" height="${femaleLean?'1200':'1536'}" alt="無理なく続けられる習慣を考えるイメージ"></figure>`;
       return questionVisualDefault(index,title,total)
     }
@@ -156,7 +156,7 @@
       hero.innerHTML=`<img src="${isMale?'assets/lifestyle-active-man-v2.jpg?v=2':'assets/lifestyle-inner-care-woman-v2.jpg?v=2'}" width="1536" height="1024" alt="${isMale?'年齢を重ねてもいきいきと休日を楽しむ男性':'朝のインナーケア習慣を整える女性'}"><div class="consumer-hero-shade"></div><div class="consumer-hero-copy"><small>${isArticle?'INNER AGING CARE':'全4問・年齢対策アンケート'}</small><h1>${isMale?'これからの自分に、<br>内側からの習慣を。':'外側を整えてきた私が、<br>次に選んだ内側ケア。'}</h1><p>NMNを選ぶなら、配合量だけではなく、研究背景・原料・続けやすさ・製造まで確かめたい。</p></div>`;
     }
     const renderIntroConsumer=renderIntro;
-    renderIntro=function(){let nativeScrollIntoView;if(format==='quiz'){nativeScrollIntoView=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(options){if(this.classList?.contains('article-result'))return;return nativeScrollIntoView.call(this,options)};setTimeout(()=>{Element.prototype.scrollIntoView=nativeScrollIntoView},700)}renderIntroConsumer();buildOriginalHero();consumerizeCopy();if(audience==='male'&&format==='survey'){const intro=$('#begin')?.previousElementSibling;if(intro?.classList.contains('intro')){intro.className='intro intro-hook';intro.innerHTML=femaleLean?`<span class="intro-hook-kicker"><b>毎日取り入れるものだから、納得して選ぶ。</b></span><strong>NMNは配合量だけで<br>選んでいませんか。</strong><p>美容や食事と同じように、口にするものも雰囲気だけでは決めたくない。</p><p>確認したいのは、開発背景・品質・続けやすさの3つです。</p><p>3問を通じて、これからのNMNを選ぶ基準を一つずつ見直してみましょう。</p>`:`<span class="intro-hook-kicker"><b>選ぶ基準が、ひとつ変わる。</b></span><strong>「高配合だから」だけで、<br>決める前に。</strong><p>開発したのは誰か。原料の中身はどうか。毎日続けられる設計か。</p><p>実は、配合量だけでは見えてこない「本当に必要な品質」があります。</p><p>わずか1分で、あなたに合ったNMNの“本当の選び方”が分かります。</p>`}}document.documentElement.scrollTop=0;document.body.scrollTop=0;setTimeout(()=>{document.documentElement.style.scrollBehavior='auto';document.documentElement.scrollTop=0;document.body.scrollTop=0},500)}
+    renderIntro=function(){let nativeScrollIntoView;if(format==='quiz'){nativeScrollIntoView=Element.prototype.scrollIntoView;Element.prototype.scrollIntoView=function(options){if(this.classList?.contains('article-result'))return;return nativeScrollIntoView.call(this,options)};setTimeout(()=>{Element.prototype.scrollIntoView=nativeScrollIntoView},700)}renderIntroConsumer();buildOriginalHero();consumerizeCopy();if(audience==='male'&&format==='survey'){const intro=$('#begin')?.previousElementSibling;if(intro?.classList.contains('intro')){intro.className='intro intro-hook';intro.innerHTML=femaleLean?`<span class="intro-hook-kicker"><b>若々しく活力ある毎日を、内側から支える。</b></span><strong>年齢対策*は続けている。<br>それでも感じる変化に。</strong><p>年齢とともに変わる毎日だから、化粧品だけでなく、インナーケアサプリも丁寧に選びたい。</p><p>大切なのは数字の大きさだけではなく、研究背景・品質・続けやすさまで確かめること。</p><p>3つの質問から、これからの貴方に合うNMNの選び方を見つけましょう。</p>`:`<span class="intro-hook-kicker"><b>選ぶ基準が、ひとつ変わる。</b></span><strong>「高配合だから」だけで、<br>決める前に。</strong><p>開発したのは誰か。原料の中身はどうか。毎日続けられる設計か。</p><p>実は、配合量だけでは見えてこない「本当に必要な品質」があります。</p><p>わずか1分で、あなたに合ったNMNの“本当の選び方”が分かります。</p>`}}document.documentElement.scrollTop=0;document.body.scrollTop=0;setTimeout(()=>{document.documentElement.style.scrollBehavior='auto';document.documentElement.scrollTop=0;document.body.scrollTop=0},500)}
     function applyMaleGothicScale(root=$('#screen')){
       if(audience!=='male'||format!=='survey'||!root)return;
       root.querySelectorAll('p,button,a,small,span,b,strong,h1,h2,h3,h4,li,figcaption,blockquote,em').forEach(el=>{
@@ -168,7 +168,7 @@
       });
     }
     const renderIntroWithTypography=renderIntro;
-    renderIntro=function(){renderIntroWithTypography();if(audience==='male'&&format==='survey'){const begin=$('#begin');begin.textContent=femaleLean?'NMNを選ぶ基準を、3問で確認':'今の年齢対策*を、3問で見直す';applyMaleGothicScale();const note=document.createElement('p');note.className='intro-age-note';note.dataset.gothicScaled='true';note.textContent='※年齢に応じた栄養ケアのこと';begin.after(note)}else applyMaleGothicScale()}
+    renderIntro=function(){renderIntroWithTypography();if(audience==='male'&&format==='survey'){const begin=$('#begin');if(femaleLean)begin.innerHTML='これからの貴方に合う選び方を、<br>3問で確認！';else begin.textContent='今の年齢対策*を、3問で見直す';applyMaleGothicScale();const note=document.createElement('p');note.className='intro-age-note';note.dataset.gothicScaled='true';note.textContent='※年齢に応じた栄養ケアのこと';begin.after(note)}else applyMaleGothicScale()}
     const answerQuestionConsumer=answerQuestion;
     answerQuestion=function(block,button,index){
       answerQuestionConsumer(block,button,index);
@@ -176,7 +176,7 @@
         const insight=block.nextElementSibling;
         if(insight?.classList.contains('insight-card')){
           if(!insight.querySelector('.read-on-marker')){const marker=document.createElement('img');marker.className='read-on-marker';marker.src='assets/read-on-arrow-v1.svg';marker.width=750;marker.height=124;marker.alt='続けて下の解説をお読みください';insight.prepend(marker)}
-          if(index===0){const metrics=insight.querySelector('.proof-metrics');if(metrics){const image=document.createElement('img');image.className='proof-metrics-image';image.src='assets/male-survey-proof1-metrics-v1.jpg?v=1';image.width=3266;image.height=1082;image.alt='研究・検査、データ姿勢、解析背景';metrics.replaceWith(image)}}
+          if(index===0){const metrics=insight.querySelector('.proof-metrics');if(femaleLean)metrics?.remove();else if(metrics){const image=document.createElement('img');image.className='proof-metrics-image';image.src='assets/male-survey-proof1-metrics-v1.jpg?v=1';image.width=3266;image.height=1082;image.alt='研究・検査、データ姿勢、解析背景';metrics.replaceWith(image)}}
           if(index===1){const metrics=insight.querySelector('.proof-metrics');if(metrics){const image=document.createElement('img');image.className='proof-metrics-image';image.src='assets/male-survey-proof2-metrics-v1.jpg?v=1';image.width=2048;image.height=1152;image.alt='純度99.9％、徹底した数字主義、長年の研究成果';metrics.replaceWith(image)}}
           if(index===0&&!insight.nextElementSibling?.classList.contains('male-survey-proof-insert')){const image=document.createElement('img');image.className='male-survey-proof-insert';image.src='assets/male-survey-research-proof-v1.jpg?v=1';image.width=2048;image.height=2048;image.alt='細胞年齢・長寿体質・免疫・臨床試験に向き合う研究と検査の実績';insight.after(image)}
           if(index===2&&!insight.querySelector('.dosage-note')){const note=document.createElement('small');note.className='dosage-note';note.textContent='※目安量';insight.querySelector('p')?.after(note)}
@@ -191,11 +191,11 @@
       renderResultConsumerOffer();
       if(audience!=='male'||format!=='survey')return;
       const reasonHeading=$('.editor-note b');if(reasonHeading){reasonHeading.textContent='免疫分析研究センターが選ばれる理由';reasonHeading.classList.add('keep-white')}
-      const reasonList=$('.editor-note p');if(reasonList){reasonList.innerHTML=reasonList.innerHTML.replace('③1日1球に250mg','③1日1球*に250mg')+'<br><small class="dosage-note" data-gothic-scaled="true">※目安量</small>'}
+      const reasonList=$('.editor-note p');if(reasonList){reasonList.innerHTML=reasonList.innerHTML.replace('③1日1球に250mg',femaleLean?'③1日1球*':'③1日1球*に250mg')+'<br><small class="dosage-note" data-gothic-scaled="true">※目安量</small>'}
       const resultIntro=$('.article-top .intro');if(resultIntro)resultIntro.remove();
       const resultParagraphs=$$('.article-copy p');
       if(femaleLean&&resultParagraphs[0])resultParagraphs[0].textContent='スキンケアや食事には気を配ってきた。だからこそ、これから内側に取り入れるものも、雰囲気だけではなく、根拠と続けやすさまで納得して選びたい。';
-      if(resultParagraphs[1])resultParagraphs[1].innerHTML='配合量の大きさだけではなく、<strong>誰が開発し、どのように品質を確かめ、毎日無理なく続けられるか</strong>。この3つを確認することが、納得できるNMN選びにつながります。';
+      if(resultParagraphs[1])resultParagraphs[1].innerHTML='配合量の大きさだけではなく、<strong class="result-yellow-marker">誰が開発し、どのように品質を確かめ、毎日無理なく続けられるか</strong>。この3つを確認することが、納得できるNMN選びにつながります。';
       if(resultParagraphs[2])resultParagraphs[2].textContent='免疫分析研究センターのNMNは、研究・検査機関としての背景、純度99.9％、1日1球を目安に250mg、NMNを主役にしたシンプルな配合設計、国内GMP認定工場での製造という情報を公開しています。';
       const resultVisual=$('.science-break img');if(resultVisual){resultVisual.src=femaleLean?'assets/female-survey-result-routine-v1.png?v=1':'assets/male-survey-result-product-4x3-v1.jpg?v=1';resultVisual.width=femaleLean?1000:1536;resultVisual.height=femaleLean?1000:1152;resultVisual.alt=femaleLean?'朝の光が入る食卓でNMNサプリメントと1粒を手に取る女性の手元':'木製デスクの中央に置かれた免疫分析研究センターのNMN'}
       const handsVisual=$('.hands-break');if(handsVisual)handsVisual.remove();
