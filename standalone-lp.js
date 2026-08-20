@@ -1,6 +1,6 @@
 (async()=>{
   const host=document.querySelector('[data-lp-audience][data-lp-format]');
-  const source=await fetch('index.html?standalone=20260820-02',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
+  const source=await fetch('index.html?standalone=20260820-03',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
   const doc=new DOMParser().parseFromString(source,'text/html');
   const style=doc.querySelector('style');
   const script=doc.querySelector('script');
@@ -124,6 +124,7 @@
     .standalone-shell .consumer-offer .mock-cta{margin-top:18px;min-height:62px;border:3px solid #fff;border-radius:999px;background:linear-gradient(#f56b73,#e9515c);box-shadow:0 5px 0 #b7353e;color:#fff;font-size:16px}
     .standalone-shell .consumer-offer-note{margin:14px 0 0!important;padding:0!important;background:none!important;color:#687977!important;font-size:10px!important;line-height:1.8!important}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .voice-dosage-note{display:block;margin:-16px 0 22px;padding:0 0 0 5px;color:#555!important;font-size:11px!important;font-weight:400;line-height:1.5;text-align:left}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .reason-dosage-note{display:block;margin:-10px 0 0;color:#555!important;font-size:11px!important;font-weight:400;line-height:1.5}
   `;
   document.head.append(continuity);
   const audience=host.dataset.lpAudience;
