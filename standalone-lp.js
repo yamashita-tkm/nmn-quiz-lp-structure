@@ -1,6 +1,6 @@
 (async()=>{
   const host=document.querySelector('[data-lp-audience][data-lp-format]');
-  const source=await fetch('index.html?standalone=20260820-01',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
+  const source=await fetch('index.html?standalone=20260820-02',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
   const doc=new DOMParser().parseFromString(source,'text/html');
   const style=doc.querySelector('style');
   const script=doc.querySelector('script');
@@ -56,6 +56,7 @@
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .insight-card::before{display:none}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .read-on-marker{display:block;width:calc(100% + 40px);height:auto;margin:0 -20px;background:#fff}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .proof-metrics-image{display:block;width:calc(100% + 40px);height:auto;margin:0 -20px;border:0}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .male-nmn-comparison{display:block;width:100%;height:auto;margin:0;background:#fff}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .editor-note b.keep-white{color:#fff!important}
     .standalone-shell[data-lp-format="survey"] .insight-media{width:calc(100% + 40px)!important;margin:0 -20px!important}
     .standalone-shell[data-lp-format="survey"] .proof-metrics{display:grid;grid-template-columns:repeat(3,1fr);margin:0 -20px;border-top:3px solid #d7c269;border-bottom:1px solid #ddd3a8;background:linear-gradient(100deg,#fff8d4,#fffef6)}
