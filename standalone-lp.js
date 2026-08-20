@@ -1,6 +1,6 @@
 (async()=>{
   const host=document.querySelector('[data-lp-audience][data-lp-format]');
-  const source=await fetch('index.html?standalone=20260820-03',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
+  const source=await fetch('index.html?standalone=20260820-07',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('LP source unavailable');return r.text()});
   const doc=new DOMParser().parseFromString(source,'text/html');
   const style=doc.querySelector('style');
   const script=doc.querySelector('script');
@@ -125,12 +125,19 @@
     .standalone-shell .consumer-offer-note{margin:14px 0 0!important;padding:0!important;background:none!important;color:#687977!important;font-size:10px!important;line-height:1.8!important}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .voice-dosage-note{display:block;margin:-16px 0 22px;padding:0 0 0 5px;color:#555!important;font-size:11px!important;font-weight:400;line-height:1.5;text-align:left}
     .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .reason-dosage-note{display:block;margin:-10px 0 0;color:#555!important;font-size:11px!important;font-weight:400;line-height:1.5}
+    .standalone-shell[data-lp-audience="male"][data-lp-format="survey"] .article-copy p strong{background:linear-gradient(transparent 62%,#ffe66a 62%);font-weight:700}
   `;
   document.head.append(continuity);
   const audience=host.dataset.lpAudience;
   const format=host.dataset.lpFormat;
   const boot=`\n audience=${JSON.stringify(audience)};format=${JSON.stringify(format)};step=0;answers=[];document.querySelector('.device').dataset.audience=audience;document.querySelector('.device').dataset.format=format;renderIntro();`;
   Function(script.textContent+boot)();
+  if(audience==='male'&&format==='survey'){
+    const intro=document.querySelector('.intro-hook');
+    if(intro){const paragraphs=intro.querySelectorAll('p');if(paragraphs[0])paragraphs[0].textContent='配合量が多いことだけで、自分に合うNMNとは限りません。';if(paragraphs[1])paragraphs[1].textContent='開発背景・品質・続けやすさの3つが、実はNMN選びに重要なのです。';if(paragraphs[2])paragraphs[2].innerHTML='たった3問で、あなたに合うNMNが分かるアンケートをご用意いたしました。<br>回答いただいた方だけに特別なご案内をしています。'}
+    const baseAnswerQuestion=answerQuestion;
+    answerQuestion=function(block,button,index){baseAnswerQuestion(block,button,index);setTimeout(()=>{if(index===0){const image=[...document.querySelectorAll('.question-visual img')].find(img=>img.alt.includes('NMNの品質情報')||img.alt.includes('設問2'));if(image){image.src='assets/male-survey-question2-v3.png?v=1';image.alt='設問2 NMNの品質に関する確認'}const nextBlock=document.querySelector('.question-block[data-question="1"]');const options=nextBlock?.querySelectorAll('.option');if(options?.length===3){options[0].textContent='知らなかった';options[1].innerHTML='知っているので製造・品質を重視している<br>品質重視で選びたい';options[2].textContent='あまり気にしていなかった'}}if(index===2){const insight=block.nextElementSibling;if(!insight?.classList.contains('insight-card'))return;const note=insight.querySelector('.dosage-note');const metrics=insight.querySelector('.proof-metrics');if(note&&metrics)metrics.after(note)}},0)};
+  }
   history.replaceState(null,'',location.pathname);
   window.scrollTo({top:0,left:0,behavior:'auto'});
   document.documentElement.scrollTop=0;
