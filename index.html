@@ -128,9 +128,6 @@
       while(node=walker.nextNode())for(const [before,after] of replacements)if(node.nodeValue.includes(before))node.nodeValue=node.nodeValue.replaceAll(before,after);
       root.querySelectorAll('img[alt^="公式記事LP参考ビジュアル"]').forEach((img,i)=>img.alt=`免疫分析研究センターのNMNについて ${i+1}`);
       if(audience==='male'&&format==='survey'){
-        const unwanted='原料・配合量・製造に関する情報は、免疫分析研究センター公式サイトの表示に基づきます。';
-        const cleanup=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let textNode;
-        while(textNode=cleanup.nextNode())if(textNode.nodeValue.includes(unwanted))textNode.nodeValue=textNode.nodeValue.replaceAll(unwanted,'');
         root.querySelectorAll('.insight-foot').forEach(el=>{if(!el.textContent.replaceAll('※','').trim())el.remove()});
       }
     }
